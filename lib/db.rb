@@ -19,19 +19,11 @@ class DB
   end
 
   def calc_pay
-    pay = 0.0
-    @events.each do |event|
-      pay += event[:hours].to_f * event[:rate].to_f
-    end
-    pay
+    @events.inject(0.0) { |sum, event| event[:hours] * event[:rate] + sum }
   end
 
   def calc_mileage
-    mileage = 0.0
-    @events.each do |event|
-      mileage += event[:mileage].to_f
-    end
-    mileage
+    @events.inject(0.0) { |sum, event| event[:mileage] + sum }
   end
 
   def load

@@ -18,11 +18,11 @@ def get_input
   puts "Enter student tutored: "
   tutoring[:student] = gets.chomp
   puts "Enter hours tutored: "
-  tutoring[:hours] = gets.chomp
+  tutoring[:hours] = gets.chomp.to_f
   puts "Enter rate per hour: "
-  tutoring[:rate] = gets.chomp
+  tutoring[:rate] = gets.chomp.to_f
   puts "Enter mileage: "
-  tutoring[:mileage] = gets.chomp
+  tutoring[:mileage] = gets.chomp.to_f
 
   tutoring
 end
